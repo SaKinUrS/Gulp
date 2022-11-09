@@ -1,0 +1,105 @@
+.intro {
+    padding: 290px 0;
+    background: url('../img/background.jpg') center center / cover no-repeat;
+    height: 100vh;
+    background-color: #D8D1CB;
+    @media (max-width: 767.98px){
+        height: auto;
+        padding: 200px 0 100px;
+        background-position: left;
+    }
+    @media (max-width: 768px){
+        padding: 200px 0;
+    }
+    &__container {
+
+    }
+
+    &__body {
+        max-width: 361px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        &::after,
+        &::before{
+            content: '';
+            position: absolute;
+            background-color: #6B6C71;
+
+        }
+        &::after{
+            width: 80%;
+            top: -22px;
+            left: -13%;
+            height: 1px;
+
+        }
+        &::before{
+            width: 1px;
+            height: 107%;
+            top: -21%;
+            left: -22px;
+        }
+        @media (max-width: 1200px){
+            margin-left: 50px;
+        }
+        @media (max-width: 450px){
+            max-width: none;
+        }
+
+    }
+
+    &__suptitle {
+        text-transform: uppercase;
+        color: #2C314B;
+        font-size: 16px;
+
+        &:not(:last-child){
+            margin-bottom: 7px;
+        }
+    }
+
+    &__title {
+        display: inline-block;
+        font-size: 50px;
+        line-height: 1.1;
+        font-weight: 600;
+
+        &:not(:last-child){
+            margin-bottom: 15px;
+        }
+        @media (max-width: 450px){
+            font-size: 40px;
+        }
+        @media (max-width: 320px){
+            font-size: 30px;
+        }
+    }
+
+    &__price {
+        font-size: 24px;
+        color: #121211;
+
+        span{
+            font-size: 16px;
+            color: #878787;
+        }
+        &:not(:last-child){
+            margin-bottom: 21px;
+        }
+    }
+
+    &__button {
+        background-color: var(--accent-color);
+        color: var(--white);
+        display: flex;
+        align-self: flex-start;
+
+         @media(any-hover: hover){
+                &:hover{
+                    box-shadow: 1px 1px 5px #000;
+                }
+            }
+
+    }
+}

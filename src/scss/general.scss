@@ -1,0 +1,177 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+}
+[class*='__container']{
+    margin: 0 auto;
+    max-width: var(--width-container);
+    padding: 0 15px;
+}
+
+// Button
+.button {
+    display: inline-block;
+    text-transform: uppercase;
+    border: 1px solid #000;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 7px 14px;
+    position: relative;
+    color: var(--accent-color);
+    background: transparent;
+    transition: .2s linear;
+    line-height: 1.5;
+
+    &::after,
+    &::before{
+        content: '';
+        width: 9px;
+        height: 9px;
+        background: transparent;
+        position: absolute;
+        pointer-events: none;
+    }
+    &::after{
+      
+        top: -9px;
+        left: -9px;
+        border-bottom:1px solid black ;
+        border-right:1px solid black ;
+    }
+    &::before{
+        bottom: -9px;
+        right: -9px;
+        border-top:1px solid black ;
+        border-left:1px solid black ;
+    }
+     @media(any-hover: hover){
+            &:hover{
+                background-color: var(--accent-color);
+                color: var(--white);
+            }
+        }
+}
+// Header-Block
+.header-block {
+
+    &__suptitle {
+        color: #9A6437;
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 16px;
+        position: relative;
+        &:not(:last-child){
+            margin-bottom: 21px;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -75px;
+            width: 55px;
+            height: 1px;
+            transform: translateY(-50%);
+            background-color: #9A6437;
+        }
+        
+        
+
+        &_white {
+            display: inline-block;
+            color: #E0E0E0;
+            &::after{
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: -75px;
+                width: 55px;
+                height: 1px;
+                transform: translateY(-50%);
+                background-color: #E0E0E0;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -75px;
+                width: 55px;
+                height: 1px;
+                transform: translateY(-50%);
+                background-color: #E0E0E0;
+            }
+        }
+        &_brown {
+            display: inline-block;
+            color: #9A6437;
+            &::after{
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: -75px;
+                width: 55px;
+                height: 1px;
+                transform: translateY(-50%);
+                background-color: #9A6437;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -75px;
+                width: 55px;
+                height: 1px;
+                transform: translateY(-50%);
+                background-color: #9A6437;
+            }
+            &:not(:last-child){
+                margin-bottom: 39px;
+            }
+        }
+    }
+
+    &__title {
+        color: var(--accent-color);
+        font-size: 42px;
+        line-height: 1.05;
+        text-transform: capitalize;
+
+        &_white {
+            color: var(--white);
+        }
+        &_brown{
+        color: var(--accent-color);
+
+        }
+        @media (max-width: 450px){
+            font-size: 36px;
+        }
+    }
+}
+
+// Swiper Buttons
+.swiper-button-prev {
+    transform: translateX(-75px);
+    cursor: pointer;
+    pointer-events: visible;
+
+    @media (max-width: 1270px){
+        transform: none;
+    }
+}
+.swiper-button-next {
+    transform: translateX(75px);
+    cursor: pointer;
+    pointer-events: visible;
+
+    @media (max-width: 1270px){
+        transform: none;
+    }
+}
+.swiper-button-disabled{
+
+    svg{
+        fill: rgb(0, 0, 0);
+    }
+}

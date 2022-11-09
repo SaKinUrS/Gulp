@@ -1,0 +1,121 @@
+.collection {
+    padding: 94px 0 57px;
+    @media (max-width: 768px){
+        padding: 50px 0;
+    }
+    @media (max-width: 450px){
+        padding: 30px 0 50px;
+    }
+
+    &__container {
+    }
+
+    &__slider {
+        position: relative;
+    }
+
+    &__buttons {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        z-index: 20;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @media (max-width: 1270px){
+            top: 110%;
+            justify-content: center;
+            gap: 50px;
+        }
+    }
+}
+.swiper {
+}
+.collection-swiper {
+    position: relative;
+    overflow: hidden;
+}
+.swiper-wrapper {
+}
+.collection-wrapper {
+    display: inline-flex;
+    min-width: 0;
+}
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+}
+.collection-slide {
+    background-color: #E5E6E6;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    
+    
+
+    &__content {
+        padding: 58px 27px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1 1 auto;
+        &:not(:last-child){
+            margin-bottom: 17px;
+        }
+    }
+
+    &__title {
+        font-size: 26px;
+        text-transform: capitalize;
+        max-width: 210px;
+        line-height: 1.2;
+        flex: 1 1 auto;
+        &:not(:last-child){
+            margin-bottom: 27px;
+        }
+    }
+
+    &__button {
+        transition: .2s linear;
+        align-self: flex-start;
+        align-items: flex-end;
+
+         @media(any-hover: hover){
+                &:hover{
+                    background-color: var(--accent-color);
+                    color: var(--white);
+                }
+            }
+    }
+
+    &__img {
+        align-self: center;
+        height: 261px;
+        &_reverse{
+            transform: scaleX(-1);
+
+        }
+        img{
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+        @media (max-width: 991.98px){
+            height: 200px;
+        }
+    }
+}
+.reverse{
+}
+.collection-button {
+    svg{
+    fill: var(--accent-color);}
+}
+
+.collection-button-prev {
+}
+.collection-button-next {
+}

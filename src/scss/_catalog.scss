@@ -1,0 +1,226 @@
+.catalog {
+    padding: 67px 0 90px;
+
+    @media (max-width: 320px){
+        padding-bottom: 50px;
+    }
+
+    &__container {
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+
+        &:not(:last-child){
+            margin-bottom: 34px;
+        }
+        @media (max-width: 991.98px){
+            flex-direction: column;
+            row-gap: 30px;
+            justify-content: center;
+            text-align: center;
+
+        }
+    }
+
+    &__header {       
+    }
+
+    &__tabs {
+        align-self: flex-end;
+        display: flex;
+        gap: 20px;
+        
+        @media (max-width: 991.98px){
+            align-self: center;
+        }
+        @media (max-width: 500px){
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    &__body {
+        
+    }
+
+    &__content {
+        display: none;
+        margin: 0 -15px;
+        row-gap: 40px;
+        flex-wrap: wrap;
+
+        &._active{
+            display: flex;
+        }
+        @media (max-width: 440px){
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+    }
+}
+
+.tab-button {
+    color: #353535;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: .2s linear;
+
+     @media(any-hover: hover){
+            &:hover{
+                background-color: var(--accent-color);
+                color: var(--white);
+            }
+        }
+
+        &._active{
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+}
+.item-catalog {
+    flex: 0 1 25%;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 991.98px){
+        flex: 0 1 33.333%;
+    }
+    @media (max-width: 650px){
+        flex: 0 1 50%;
+    }
+    &__thumb {
+        flex: 1 1 auto;
+        margin: 0 auto;
+        padding: 73px 0 40px;
+        transition: .2s linear;
+        overflow: hidden;
+         @media(any-hover: hover){
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        img{
+            max-width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        background-color: var(--accent-color);
+        padding: 9px; 
+        margin-bottom: 6px;
+
+        
+    }
+
+    &__content {
+    }
+
+    &__title {
+        font-size: 18px;
+        line-height: 1.14;
+        color: #282828;
+        font-weight: 600;
+
+        &:not(:last-child){
+            margin-bottom: 10px;
+        }
+    }
+
+    &__quality {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__price {
+        font-size: 15px;
+
+        span{
+            color: #737373;
+            text-decoration: line-through;
+        }
+    }
+
+    &__rating {
+        
+    }
+}
+.action-catalog {
+
+    &__reverse {
+        svg{
+            fill: var(--white);
+            transition: .1s linear;
+
+             @media(any-hover: hover){
+                    &:hover{
+                        fill: red;
+                    }
+                }
+        }
+        
+    }
+
+    &__like {
+        svg{
+            fill: var(--white);
+            transition: .1s linear;
+
+             @media(any-hover: hover){
+                    &:hover{
+                        fill: red;
+                    }
+                }
+        }
+    }
+
+    &__shop {
+        svg{
+            fill: var(--white);
+            transition: .1s linear;
+
+             @media(any-hover: hover){
+                    &:hover{
+                        fill: red;
+                    }
+                }
+        }
+    }
+}
+.rating {
+    display: flex;
+    gap: 5px;
+    flex-direction: row-reverse;
+
+    &[data-star-total="1"] .rating-star:nth-child(n + 5),
+    &[data-star-total="2"] .rating-star:nth-child(n + 4),
+    &[data-star-total="3"] .rating-star:nth-child(n + 3),
+    &[data-star-total="4"] .rating-star:nth-child(n + 2),
+    &[data-star-total="5"] .rating-star:nth-child(n + 1)
+    {
+        fill: #F5CC26;             
+    }  
+ 
+}
+.rating-star {
+    cursor: pointer;
+    font-size: 13px;
+    fill: #a7a7a7;
+    transition: .1s linear;
+
+     @media(any-hover: hover){
+            &:hover,
+            &:hover ~ &{
+                fill: #757575;
+            }
+        }
+}
